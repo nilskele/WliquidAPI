@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: #f4f4f4;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            width: 90%;
+            margin-top: 50px;
+        }
+        .column {
+            width: 45%;
+            margin-right: 5%;
+        }
+        .column:last-child {
+            margin-right: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #007bff;
+        }
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .card a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .step {
+            background-color: #e0e0e0;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .step h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .step p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .json-example {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column">
+            <h2>Users Endpoints</h2>
+            <div class="step">
+                <h3>1: Get All Users</h3>
+                <p>Use this endpoint to retrieve a list of all users.</p>
+                <p><strong>URL:</strong> <a href="http://localhost:3000/api/users/getPaged" target="_blank">http://localhost:3000/api/users/getPaged</a></p>
+                <p><strong>Method:</strong> GET</p>
+                <p>Test this endpoint using Postman by sending a GET request to the above URL.</p>
+            </div>
+            
+
+            
+
+            <div class="step">
+                <h3>2: Get User by ID</h3>
+                <p>Use this endpoint to retrieve a user by their ID.</p>
+                <p><strong>URL:</strong> <a href="http://localhost:3000/api/users/get/{id}" target="_blank">http://localhost:3000/api/users/get/{id}</a></p>
+                <p><strong>Method:</strong> GET</p>
+                <p>Replace <code>{id}</code> with the user ID in Postman and send the GET request.</p>
+            </div>
+
+            
+
+            <div class="step">
+                <h3>3: Create a New User</h3>
+                <p>Use this endpoint to create a new user by sending data in the request body.</p>
+                <p><strong>URL:</strong> <a href="http://localhost:3000/api/users/create" target="_blank">http://localhost:3000/api/users/create</a></p>
+                <p><strong>Method:</strong> POST</p>
+                <p>Use Postman to send a POST request with the user data in the body.</p>
+                <div class="json-example">
+                    <h4>Request Body Example:</h4>
+                    <pre>
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com"
+}
+                    </pre>
+                </div>
+            </div>
+
+            
+
+            <div class="step">
+                <h3>4: Update User by ID</h3>
+                <p>Use this endpoint to update a user's information by their ID.</p>
+                <p><strong>URL:</strong> <a href="http://localhost:3000/api/users/update/{id}" target="_blank">http://localhost:3000/api/users/update/{id}</a></p>
+                <p><strong>Method:</strong> PUT</p>
+                <p>Replace <code>{id}</code> with the user ID and provide updated data in the request body.</p>
+                <div class="json-example">
+                    <h4>Request Body Example:</h4>
+                    <pre>
+{
+    "firstName": "John",
+    "lastName": "Doe Updated",
+    "email": "john.doe.updated@example.com"
+}
+                    </pre>
+                </div>
+            </div>
+
+            
+
+            <div class="step">
+                <h3>5: Delete User by ID</h3>
+                <p>Use this endpoint to delete a user by their ID.</p>
+                <p><strong>URL:</strong> <a href="http://localhost:3000/api/users/delete/{id}" target="_blank">http://localhost:3000/api/users/delete/{id}</a></p>
+                <p><strong>Method:</strong> DELETE</p>
+                <p>Replace <code>{id}</code> with the user ID and send the DELETE request in Postman.</p>
+            </div>
+            <div class="step">
+                <h3>6: Get selected Users</h3>
+                <p>Use this endpoint to retrieve a list of all users with pagination options using limit and offset.</p>
+                <p><strong>URL:</strong> <a href="http://localhost:3000/api/users/getPaged?limit=10&offset=0" target="_blank">http://localhost:3000/api/users/getPaged?limit=10&offset=0</a></p>
+                <p><strong>Method:</strong> GET</p>
+                <p>Test this endpoint using Postman by sending a GET request to the above URL with the query parameters <code>limit</code> and <code>offset</code>:</p>
+                <div class="json-example">
+                    <h4>Request Example:</h4>
+                    <pre>
+GET http://localhost:3000/api/users/getPaged?limit=10&offset=0
+                    </pre>
+                </div>
+                <p><strong>Explanation:</strong> The <code>limit</code> parameter specifies how many users to return, and the <code>offset</code> parameter specifies where to start retrieving the users (i.e., which record to start from).</p>
+            </div>
+            <div class="step">
+                <h3>7: Search Users by Field</h3>
+                <p>Use this endpoint to search users based on a specific field value.</p>
+                <p><strong>URL:</strong> <a href="http://localhost:3000/api/users/search" target="_blank">http://localhost:3000/api/users/search</a></p>
+                <p><strong>Method:</strong> GET</p>
+                <p><strong>Query Parameters:</strong></p>
+                <ul>
+                    <li><code>field</code>: The field to search (e.g., <code>firstName</code>).</li>
+                    <li><code>value</code>: The value to match in the specified field.</li>
+                </ul>
+                <p>Example:</p>
+                <div class="json-example">
+                    <h4>Example Request:</h4>
+                    <pre>
+            http://localhost:3000/api/users/search?field=firstName&value=John
+                    </pre>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="column">
+            <h2>Newsletters Endpoints</h2>
+            <div class="step">
+                <h3>1: Get All Newsletters</h3>
+                <p>Use this endpoint to retrieve a list of all newsletters.</p>
+                <p><strong>URL:</strong> <a href="http://localhost:3000/api/newsletters/getPaged" target="_blank">http://localhost:3000/api/newsletters/getPaged</a></p>
+                <p><strong>Method:</strong> GET</p>
+                <p>Test this endpoint using Postman by sending a GET request to the above URL.</p>
+            </div>
+
+            
+
+            <div class="step">
+                <h3>2: Get Newsletter by ID</h3>
+                <p>Use this endpoint to retrieve a newsletter by its ID.</p>
+                <p><strong>URL:</strong> <a href="http://localhost:3000/api/newsletters/get/{id}" target="_blank">http://localhost:3000/api/newsletters/get/{id}</a></p>
+                <p><strong>Method:</strong> GET</p>
+                <p>Replace <code>{id}</code> with the newsletter ID in Postman and send the GET request.</p>
+            </div>
+
+            
+
+            <div class="step">
+                <h3>3: Create a New Newsletter</h3>
+                <p>Use this endpoint to create a new newsletter by sending data in the request body.</p>
+                <p><strong>URL:</strong> <a href="http://localhost:3000/api/newsletters/create" target="_blank">http://localhost:3000/api/newsletters/create</a></p>
+                <p><strong>Method:</strong> POST</p>
+                <p>Use Postman to send a POST request with the newsletter data in the body.</p>
+                <div class="json-example">
+                    <h4>Request Body Example:</h4>
+                    <pre>
+            {
+                "title": "Monthly Newsletter",
+                "content": "This is the content of the newsletter.",
+                "category": "Marketing"
+            }
+                    </pre>
+                </div>
+            </div>
+            
+
+           
+
+            <div class="step">
+                <h3>4: Update Newsletter by ID</h3>
+                <p>Use this endpoint to update a newsletter by its ID.</p>
+                <p><strong>URL:</strong> <a href="http://localhost:3000/api/newsletters/update/{id}" target="_blank">http://localhost:3000/api/newsletters/update/{id}</a></p>
+                <p><strong>Method:</strong> PUT</p>
+                <p>Replace <code>{id}</code> with the newsletter ID and provide updated data in the request body.</p>
+                <div class="json-example">
+                    <h4>Request Body Example:</h4>
+                    <pre>
+{
+    "title": "Updated Newsletter Title",
+    "content": "Updated content of the newsletter."
+}
+                    </pre>
+                </div>
+            </div>
+
+            
+
+            <div class="step">
+                <h3>5: Delete Newsletter by ID</h3>
+                <p>Use this endpoint to delete a newsletter by its ID.</p>
+                <p><strong>URL:</strong> <a href="http://localhost:3000/api/newsletters/delete/{id}" target="_blank">http://localhost:3000/api/newsletters/delete/{id}</a></p>
+                <p><strong>Method:</strong> DELETE</p>
+                <p>Replace <code>{id}</code> with the newsletter ID and send the DELETE request in Postman.</p>
+            </div>
+            <div class="step">
+                <h3>6: Get selected Newsletters</h3>
+                <p>Use this endpoint to retrieve a list of all newsletters with pagination options using limit and offset.</p>
+                <p><strong>URL:</strong> <a href="http://localhost:3000/api/newsletters/getPaged?limit=10&offset=0" target="_blank">http://localhost:3000/api/newsletters/getPaged?limit=10&offset=0</a></p>
+                <p><strong>Method:</strong> GET</p>
+                <p>Test this endpoint using Postman by sending a GET request to the above URL with the query parameters <code>limit</code> and <code>offset</code>:</p>
+                <div class="json-example">
+                    <h4>Request Example:</h4>
+                    <pre>
+GET http://localhost:3000/api/newsletters/getPaged?limit=10&offset=0
+                    </pre>
+                </div>
+                <p><strong>Explanation:</strong> The <code>limit</code> parameter specifies how many newsletters to return, and the <code>offset</code> parameter specifies where to start retrieving the newsletters (i.e., which record to start from).</p>
+            </div>
+            <div class="step">
+                <h3>7: Search Newsletters by Category</h3>
+                <p>Use this endpoint to search for newsletters based on a specific category.</p>
+                <p><strong>URL:</strong> <a href="http://localhost:3000/api/newsletters/searchByCategory" target="_blank">http://localhost:3000/api/newsletters/searchByCategory</a></p>
+                <p><strong>Method:</strong> GET</p>
+                <p><strong>Query Parameters:</strong></p>
+                <ul>
+                    <li><code>category</code>: The category to search for (e.g., <code>Marketing</code>).</li>
+                </ul>
+                <p>Example:</p>
+                <div class="json-example">
+                    <h4>Example Request:</h4>
+                    <pre>
+            http://localhost:3000/api/newsletters/searchByCategory?category=Marketing
+                    </pre>
+                </div>
+            </div>
+            
+            
+
+            
+        </div>
+    </div>
+</body>
+</html>
