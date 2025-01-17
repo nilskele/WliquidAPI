@@ -1,4 +1,6 @@
 #Sources:
+
+https://apidog.com/blog/how-to-use-postman-for-api-testing/?utm_source=google_dsa&utm_medium=g&utm_campaign=22058259794&utm_content=174196802804&utm_term=&gad_source=1&gclid=CjwKCAiAnKi8BhB0EiwA58DA4ZwYSivCcZJDHSWRVBBvuU_Zr6Qa0uiLqgKuw4QcGSvLM7oJUpIGkBoCQPcQAvD_BwE
 https://chatgpt.com/c/6783b95a-4680-800a-936b-68003f31803b
 
 
