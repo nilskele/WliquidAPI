@@ -17,7 +17,8 @@ db.serialize(() => {
         CREATE TABLE IF NOT EXISTS newsletters (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             title TEXT NOT NULL,
-            content TEXT NOT NULL
+            content TEXT NOT NULL,
+            category TEXT NOT NULL
         )
     `);
 });
