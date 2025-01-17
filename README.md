@@ -4,7 +4,9 @@ https://chatgpt.com/c/6783b95a-4680-800a-936b-68003f31803b
 # Project Setup Instructions
 
 ## 1. Clone the Repository
-```git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+
+```
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
 cd YOUR_REPOSITORY
 ```
 ## 2. Install Required Dependencies
